@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHINX Model Selection Form</title>
+    <script>
+        function compileInfo() {
+            const firstName = document.getElementById("first-name").value;
+            const lastName = document.getElementById("last-name").value;
+            const checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+            const checkedValues = Array.from(checkboxes).map(cb => cb.value).join(", ");
+            
+            const compiledString = `First Name: ${firstName}\nLast Name: ${lastName}\nChecked Values: ${checkedValues}`;
+            document.getElementById("compiled-info").textContent = compiledString;
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Submission</h1>
+    <form onsubmit="event.preventDefault(); compileInfo();">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name"><br><br>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name"><br><br>
+
+        <label>Check the boxes:</label><br>
+        <input type="checkbox" id="box1" name="box1" value="Option 1">
+        <label for="box1">Option 1</label><br>
+        <input type="checkbox" id="box2" name="box2" value="Option 2">
+        <label for="box2">Option 2</label><br>
+        <input type="checkbox" id="box3" name="box3" value="Option 3">
+        <label for="box3">Option 3</label><br>
+        <input type="checkbox" id="box4" name="box4" value="Option 4">
+        <label for="box4">Option 4</label><br>
+        <input type="checkbox" id="box5" name="box5" value="Option 5">
+        <label for="box5">Option 5</label><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Compiled Information:</h2>
+    <pre id="compiled-info"></pre>
+</body>
+</html>
