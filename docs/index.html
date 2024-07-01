@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MailSPHINX Model Selection Form</title>
+    <title>Subscribe to our Newsletter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,7 +44,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Subscribe to receive weekly emails about SEP model performance</h1>
+        <h1>Subscribe to our Newsletter</h1>
         <form id="subscriptionForm">
             <label for="first-name">First Name:</label>
             <input type="text" id="first-name" name="first-name" required><br><br>
@@ -54,18 +54,6 @@
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
-
-            <label>Check the boxes:</label><br>
-            <input type="checkbox" id="box1" name="box1" value="Option 1">
-            <label for="box1">Option 1</label><br>
-            <input type="checkbox" id="box2" name="box2" value="Option 2">
-            <label for="box2">Option 2</label><br>
-            <input type="checkbox" id="box3" name="box3" value="Option 3">
-            <label for="box3">Option 3</label><br>
-            <input type="checkbox" id="box4" name="box4" value="Option 4">
-            <label for="box4">Option 4</label><br>
-            <input type="checkbox" id="box5" name="box5" value="Option 5">
-            <label for="box5">Option 5</label><br><br>
 
             <button type="submit">Subscribe</button>
         </form>
@@ -78,9 +66,8 @@
             const firstName = document.getElementById('first-name').value;
             const lastName = document.getElementById('last-name').value;
             const email = document.getElementById('email').value;
-            const box1 = document.getElementById('box1').value;
 
-            const response = await fetch('https://test-webpage-lgm1r5ima-luke-stegemans-projects.vercel.app')
+            const response = await fetch('https://test-webpage-one.vercel.app/subscribe' {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
