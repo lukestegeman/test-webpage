@@ -11,20 +11,18 @@
         <h3>Prerelease</h3>
         <h1><span>MailSPHINX Subscription Form</span><br>SEP Model Validation Alerts</h1>
         <p>Fill out the information below to subscribe to weekly emails on SEP model validation reports:</p>
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbzpIzGSDczpNVBzvb7Y7KzplWV5YqT0Nkxo__9Ic7ctOtKZ0sO_EKylfpxlA4EmnYbb/exec">
-            <input name="firstName" type="text" placeholder="First Name" required>
-            <input name="middleName" type="text" placeholder="Middle Name">
-            <input name="lastName" type="text" placeholder="Last Name" required>
+        <form method="POST" action="https://script.google.com/macros/s/AKfycbzs--7PerxsoiNvqfT2fL5vlnQBtgxmPLN-3UpBdphwFB7AuHSxVVbW-Hn1xvJsgu6H/exec">
+            <input name="name" type="text" placeholder="Name" required>
             <input name="email" type="email" placeholder="Email" required>
 
             <div class="info-text">Select weekly SEP model reports:</div>
 
             <button type="button" class="color-button" onclick="selectAllCheckboxes()">Select All Models</button>
-            <button type="button" class="color-button" onclick="clearAllCheckboxes()">Clear All</button><br><br>
+            <button type="button" class="color-button" onclick="clearAllCheckboxes()">Clear All</button>
+            <button type="submit" class="color-button">Confirm Selected Models & Subscribe</button><br><br>
 
             ${checkboxes}$            
 
-            <br><br><button type="submit" class="color-button">Subscribe</button>
         </form>
         <span id="msg"></span>
     </div>
