@@ -8,8 +8,6 @@ def get_googlesheet_rows():
     Extracts rows from Google Sheet that contains subscriber preferences.
     """
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-
-    # Add your service account file
     creds = sac.from_json_keyfile_name('../security/mailsphinx-8010bb19634b.json', scope)
     client = gspread.authorize(creds)
     sheet = client.open('mailsphinx-subscriber-data').sheet1
@@ -27,8 +25,6 @@ def update_googlesheet(data):
     """
 
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-
-    # Add your service account file
     creds = sac.from_json_keyfile_name('../security/mailsphinx-8010bb19634b.json', scope)
     client = gspread.authorize(creds)
     sheet = client.open('mailsphinx-subscriber-data').sheet1
@@ -38,7 +34,6 @@ def update_googlesheet(data):
 
 if __name__ == '__main__':
     
-
     # READ MODEL LIST FILE
     filename = 'model-list.txt'
     a = open(filename, 'r')
@@ -61,7 +56,7 @@ if __name__ == '__main__':
     checkbox_string = ''
     model_list = []
     for category, models in model_dict.items():
-        checkbox_string += '<br><br><div class="info-text">' + category + ' Models</div>\n'
+        checkbox_string += '                <br><br><h2>' + category + ' Models</h2>\n'
         for model in models:
             checkbox_string += '            <label>\n'
             checkbox_string += '                <input name="' + model + '" type="checkbox" id="' + model + '" value="1">\n'
@@ -108,9 +103,4 @@ if __name__ == '__main__':
         spreadsheet_data.append(row)
     update_googlesheet(spreadsheet_data)
     print('mailsphinx-subscriber-data updated (https://docs.google.com/spreadsheets/d/1PJlkhI0aimpJH2o7KaN62-Lx0Hp_e-DQoPqi8KjiEC4/edit?gid=0#gid=0)')
-    
-
-
-
-
 
